@@ -26,4 +26,4 @@ export interface CalculationError {
 export interface ValidationResult {
   isValid: boolean;
   errors: CalculationError[];
-}
+} 
