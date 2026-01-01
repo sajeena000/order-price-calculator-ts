@@ -1,92 +1,51 @@
-# Order Price Calculator
+# Order Price Calculator 
 
-A fully-typed TypeScript application for calculating order totals with tax and discounts. Built with clean architecture, async logic, and proper error handling.
+A TypeScript application for calculating order totals with tax and discounts. Features clean architecture, async operations, and a modern cyberpunk UI.
 
 ## Features
 
 - **Item Management** - Add/remove items with price and quantity
-- **Tax Calculation** - Configurable tax rate (default 8.5%)
-- **Discount Support** - Percentage or fixed amount discounts
-- **Async Operations** - Promise-based calculation with error handling
-- **Full TypeScript** - Strict typing throughout the application
-- **Modern UI** - Professional, responsive design
-
-## Requirements
-
-- Node.js (v14 or higher)
-- TypeScript 5.3+
-- Modern web browser
+- **Tax & Discounts** - Configurable tax rate (default 8.5%)
+- **Async Operations** - Promise-based calculations with error handling
+- **TypeScript** - Fully typed with strict mode
 
 ## Quick Start
-
 ```bash
-# Clone or download the project
-cd order-price-calculator-ts
-
-# Install dependencies
+# 1. Install dependencies
 npm install
 
-# Compile TypeScript
+# 2. Compile TypeScript
 npx tsc
 
-# Start local server
+# 3. Start local server
+npx serve .
+# OR
 npx http-server -p 8080
 
-# Open in browser
-# Navigate to http://localhost:8080/src/
+# 4. Open in browser
+# Visit http://localhost:3000 (or the port shown in terminal)
 ```
 
 ## Project Structure
-
 ```
 order-price-calculator-ts/
+├── dist/                # Compiled JavaScript 
 ├── src/
-│   ├── types/           # TypeScript interfaces
+│   ├── components/      # UI components (OrderForm, ItemList, etc.)
 │   ├── models/          # Business logic classes
 │   ├── services/        # Calculation & validation services
-│   ├── utils/           # Helper functions
-│   ├── components/      # UI components
+│   ├── types/           # TypeScript interfaces
+│   ├── utils/           # Helper functions (Formatters)
 │   ├── main.ts          # Application entry point
-│   ├── index.html       # HTML template
 │   └── styles.css       # Styling
-├── dist/                # Compiled JavaScript (generated)
+├── index.html           # Main HTML template
 ├── tsconfig.json        # TypeScript configuration
 └── package.json         # Project dependencies
 ```
 
-## Key Technologies
-
-- **TypeScript** - Strict typing and type safety
-- **ES6 Modules** - Modern JavaScript module system
-- **Promises/Async** - Asynchronous calculation logic
-- **DOM Manipulation** - No framework dependencies
-- **CSS3** - Modern gradients and animations
-
-## Usage Example
-
-1. **Add Items**: Enter item name, price, and quantity
-2. **Set Tax Rate**: Adjust the tax percentage (default 8.5%)
-3. **Apply Discount**: Choose percentage or fixed amount
-4. **Calculate**: Click "Calculate Total" to see breakdown
-
 ## Architecture
 
-### Types (`src/types/`)
-- Interfaces for `OrderItem`, `Discount`, `PriceBreakdown`
-- Type definitions for validation results
-
-### Models (`src/models/`)
-- `OrderItemModel` - Item creation and calculations
-- `DiscountModel` - Discount validation and application
-- `PriceBreakdownModel` - Result structure
-
-### Services (`src/services/`)
-- `CalculationService` - Async price calculations
-- `ValidationService` - Input validation logic
-
-### Components (`src/components/`)
-- `OrderForm` - Add item form with validation
-- `ItemList` - Display and manage order items
-- `PriceDisplay` - Show calculation results
-
-      
+- **Models**: Defines the shape of data (OrderItem, Discount) and business rules.
+- **Services**: Handles logic separated from the UI (CalculationService, ValidationService).
+- **Components**: Classes that manage specific DOM sections (OrderForm, PriceDisplay).
+- **Async**: Calculations are simulated as asynchronous operations using Promises.
